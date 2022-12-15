@@ -1,0 +1,10 @@
+[Unit]
+Description=hdparm sleep
+
+[Service]
+Type=oneshot
+DeviceAllow=/dev/sdb
+ExecStart=/usr/sbin/hdparm -q -S 36 -y /dev/sdb
+
+[Install]
+WantedBy=multi-user.target
